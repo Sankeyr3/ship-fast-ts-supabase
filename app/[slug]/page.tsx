@@ -9,6 +9,8 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { ComparisonTable } from "@/components/product/ComparisonTable";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, AwaitedReactNode, Key } from "react";
+
 
 interface Props {
   params: {
@@ -127,7 +129,7 @@ export default async function ProductPage({ params }: Props) {
               <h2 className={STYLES.h2}>Key Features</h2>
             </div>
             <div className={`${STYLES.gridContainer} sm:grid-cols-2 lg:grid-cols-3`}>
-              {product.key_features.map((feature, index) => (
+              {product.key_features.map((feature: { icon: any; feature_name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; benefits: any[]; }, index: number) => (
                 <Card key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
                   <CardHeader>
                     <div className="p-2 bg-primary/10 rounded-lg w-fit transform transition-all duration-300 hover:rotate-12">
@@ -143,7 +145,7 @@ export default async function ProductPage({ params }: Props) {
                     <CardDescription>{feature.description}</CardDescription>
                     {feature.benefits && feature.benefits.length > 0 && (
                       <ul className="mt-4 space-y-2">
-                        {feature.benefits.map((benefit, idx) => (
+                        {feature.benefits.map((benefit: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>, idx: Key) => (
                           <li key={idx} className="flex items-center text-sm text-muted-foreground">
                             <span className="w-1.5 h-1.5 mr-2 bg-primary rounded-full"></span>
                             {benefit}
@@ -216,7 +218,7 @@ export default async function ProductPage({ params }: Props) {
               <h2 className={STYLES.h2}>Problems {product.name} Solves</h2>
             </div>
             <div className={`${STYLES.gridContainer} sm:grid-cols-2 lg:grid-cols-3`}>
-              {product.problems_it_solves.map((problem, index) => (
+              {product.problems_it_solves.map((problem: { icon: any; title: any; problem: any; description: any; solution: any; }, index: number) => (
                 <Card key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
                   <CardHeader>
                     <div className="p-2 bg-primary/10 rounded-lg w-fit transform transition-all duration-300 hover:rotate-12">
@@ -249,7 +251,7 @@ export default async function ProductPage({ params }: Props) {
               <p className={STYLES.paragraph}>{product.pricing_value.value_proposition}</p>
             </div>
             <div className={`${STYLES.gridContainer} lg:grid-cols-3`}>
-              {product.pricing_value.pricing_tiers.map((tier, index) => (
+              {product.pricing_value.pricing_tiers.map((tier: { popular: any; name: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; price: string; features: any[]; }, index: number) => (
                 <Card key={index} className={tier.popular ? "ring-2 ring-primary" : ""} style={{ animationDelay: `${index * 200}ms` }}>
                   <CardHeader>
                     {tier.popular && (
@@ -271,7 +273,7 @@ export default async function ProductPage({ params }: Props) {
                   </CardHeader>
                   <CardContent>
                     <ul className="mt-8 space-y-4">
-                      {tier.features.map((feature, idx) => (
+                      {tier.features.map((feature: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>, idx: Key) => (
                         <li key={idx} className="flex items-center">
                           <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -403,7 +405,7 @@ export default async function ProductPage({ params }: Props) {
               <h2 className={STYLES.h2}>{product.real_world_applications.title}</h2>
             </div>
             <div className={`${STYLES.gridContainer} sm:grid-cols-2 lg:grid-cols-3`}>
-              {product.real_world_applications.use_cases.map((useCase, index) => (
+              {product.real_world_applications.use_cases.map((useCase: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>, index: number) => (
                 <Card key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
                   <CardContent className="pt-6">
                     <div className="p-2 bg-primary/10 rounded-lg w-fit">
@@ -418,7 +420,7 @@ export default async function ProductPage({ params }: Props) {
             </div>
             {product.real_world_applications.case_studies && (
               <div className={`${STYLES.gridContainer} mt-16 sm:grid-cols-2 lg:grid-cols-3`}>
-                {product.real_world_applications.case_studies.map((study, index) => (
+                {product.real_world_applications.case_studies.map((study: { title: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; description: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; results: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; }, index: number) => (
                   <Card key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
                     <CardHeader>
                       <CardTitle>{study.title}</CardTitle>
@@ -445,7 +447,7 @@ export default async function ProductPage({ params }: Props) {
               </h2>
             </div>
             <div className={`${STYLES.gridContainer} sm:grid-cols-2`}>
-              {product.social_proof.testimonials.map((testimonial, index) => (
+              {product.social_proof.testimonials.map((testimonial: { testimonial: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; author: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; }, index: number) => (
                 <Card key={index} className="bg-primary-foreground">
                   <CardContent className="pt-6">
                     <p className="text-foreground">{testimonial.testimonial}</p>
@@ -455,7 +457,7 @@ export default async function ProductPage({ params }: Props) {
               ))}
             </div>
             <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
-              {product.social_proof.trust_elements.map((element, index) => (
+              {product.social_proof.trust_elements.map((element: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>, index: number) => (
                 <div key={index} className="text-center">
                   <p className="text-sm opacity-80">{element}</p>
                 </div>
@@ -475,7 +477,7 @@ export default async function ProductPage({ params }: Props) {
               </h2>
             </div>
             <div className="mt-12 space-y-8">
-              {product.faq.questions.map((item, index) => (
+              {product.faq.questions.map((item: { question: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; answer: string | number | bigint | boolean | ReactElement<any, string | JSXElementConstructor<any>> | Iterable<ReactNode> | ReactPortal | Promise<AwaitedReactNode>; }, index: number) => (
                 <Card key={index}>
                   <CardHeader>
                     <CardTitle>{item.question}</CardTitle>
