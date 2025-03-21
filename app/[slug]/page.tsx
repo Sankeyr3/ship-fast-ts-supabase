@@ -305,7 +305,7 @@ export default async function ProductPage({ params }: Props) {
                 Why Capgo is the Best Solution
               </h2>
               <p className={STYLES.paragraph}>
-                Compare Capgo with other solutions and see why we're the best choice for your app updates
+                Compare Capgo with other solutions and see why were the best choice for your app updates
               </p>
             </div>
             <div className="mt-8 space-y-4 max-w-3xl mx-auto">
@@ -339,7 +339,7 @@ export default async function ProductPage({ params }: Props) {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
                 </div>
-                <p className="ml-3 text-lg text-muted-foreground">High Security: End-to-end encryption of updates for maximum protection of your app's source code.</p>
+                <p className="ml-3 text-lg text-muted-foreground">High Security: End-to-end encryption of updates for maximum protection of your apps source code.</p>
               </div>
             </div>
             <div className="mt-12">
