@@ -1,38 +1,25 @@
-import { Metadata } from "next";
-import { getSEOTags } from "@/libs/seo";
-import {
-  HeroSection,
-  MonthlyRankingSection,
-  FeaturedProductsSection,
-  HowItWorksSection,
-  CategoriesSection,
-  TestimonialsSection,
-  SubmitProductSection,
-  NewsletterSection,
-} from "@/components/home";
+import { Suspense } from 'react'
 import Header from "@/components/Header";
+import Hero from "@/components/Hero";
+import Problem from "@/components/Problem";
+import FeaturesAccordion from "@/components/FeaturesAccordion";
+import Pricing from "@/components/Pricing";
+import FAQ from "@/components/FAQ";
+import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import CatApi from '@/components/CatApi';
+import Landing from '@/components/Landing';
+export default function Home() {
 
-export const metadata: Metadata = getSEOTags({
-  title: "Top ShipFast | Best SaaS Tools for Developers",
-  description: "Discover and compare the best SaaS tools created by indie developers. Find the perfect software to boost your productivity and grow your business.",
-});
 
-export default function Page() {
+
+
   return (
     <>
-      <Header />
-      <main className="min-h-screen">
-        <HeroSection />
-        <MonthlyRankingSection />
-        <FeaturedProductsSection />
-        <HowItWorksSection />
-        <CategoriesSection />
-        <TestimonialsSection />
-        <SubmitProductSection />
-        <NewsletterSection />
+      <main className='container mx-auto mt-10'>
+        <CatApi/>
       </main>
-      <Footer />
+    
     </>
   );
 }
